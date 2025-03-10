@@ -17,12 +17,15 @@ export function getDependencies() {
 
 export function generateOverview() {
   const allDependencies = getDependencies()
-  
-  const description = Object.keys(allDependencies).map(key => {
-    
-  })
 
+  const description = Object.keys(allDependencies).map(dependency => {
+    if (dependency in overviewDescription) {
+      return overviewDescription[dependency]
+    }
+    return ''
+  }).join('. ')
 
+  return description
 }
 
 const overviewDescription = {
