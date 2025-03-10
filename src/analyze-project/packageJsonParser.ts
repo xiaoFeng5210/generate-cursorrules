@@ -35,6 +35,8 @@ function getPackageType() {
 export function generateOverview() {
   const allDependencies = getDependencies()
 
+  const projectIntroduction = getPackageType()
+
   const description = Object.keys(allDependencies).map(dependency => {
     if (dependency in overviewDescription) {
       return overviewDescription[dependency]
